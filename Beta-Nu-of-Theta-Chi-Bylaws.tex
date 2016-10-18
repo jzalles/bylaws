@@ -1,0 +1,74 @@
+%This is the main Bylaw file. It \includes all the rest of the bylaws, which are separated by article.
+%If you need help with LaTex, Look for the Not So Short Guide to LaTeX. You will need a LaTeX environment like MikTeX to use this.
+%Interesting note: TeX was created by Donald Knuth, an alumnus of Beta Nu Chapter.
+
+%Comments in this document either explain what a piece of markup does, explain why a a decision was made, tell a joke about the bylaws, or do what they want.
+%Comments do not need chapter approval to be edited, amended, or eaten. They are there for informational purposes only.
+
+\documentclass[oneside,openany]{book}
+\usepackage{datatool}
+\usepackage[margin=1in]{geometry}
+\usepackage{tocloft}
+\usepackage[colorlinks=true,pdfborderstyle={/S/U/W 1},linkbordercolor={0 0 1},linkcolor=cyan]{hyperref}
+\usepackage[acronym,toc,numberedsection=nolabel]{glossaries}
+
+\setcounter{tocdepth}{0} %Keeps the table of contents to chapters only (The Articles)
+\cftsetindents{chapter}{0em}{3em} %Fixes the chapter number spacing in the table of contents (Roman numerals are larger than the space allowed).
+\def\thechapter{\Roman{chapter}}
+\def\thesection{\Alph{section}} %These 2 lines force Chapters to be labled by Roman Numerals and Sections labled by letters.
+\renewcommand{\chaptername}{Article} %This line replaces the Normal title, "Chapter", with "Article"
+\def\chapterautorefname{Article} %Use proper capitalization for autoref names
+\def\sectionautorefname{Section}
+\def\itemautorefname{Item}
+
+\makeglossaries
+\loadglsentries{glossary}
+
+\title{Beta Nu Chapter of Theta Chi Fraternity}
+\author{Local Bylaws}
+%Note that the date autoupdates whenever this markup is compiled so that
+%versions can be differentiated.
+\begin{document}
+
+\maketitle
+\frontmatter
+\tableofcontents
+
+\include{preamble}
+
+\mainmatter
+
+\include{Article1}
+\glsresetall %Reset all acronyms to show the long form. This should happen anyway, but it doesn't always.
+\include{Article2}
+\glsresetall
+\include{Article3}
+\glsresetall
+\include{Article4}
+\glsresetall
+\include{Article5}
+\glsresetall
+\include{Article6}
+\glsresetall
+\include{Article7}
+\glsresetall
+\include{Article8}
+\glsresetall
+\include{Article9}
+\glsresetall
+\include{Article10}
+\glsresetall
+\include{Article11}
+\glsresetall
+\include{Article12}
+\glsaddall
+\printglossaries
+
+\appendix
+
+\include{interpretations}
+\include{standardsrulings}
+\include{permanentlegislation}
+\end{document}
+
+\underline{}
